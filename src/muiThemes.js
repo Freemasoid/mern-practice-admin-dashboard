@@ -1,5 +1,3 @@
-import { createTheme } from "@mui/material/styles";
-
 const colorTokens = {
   grey: {
     0: "#ffffff",
@@ -43,30 +41,53 @@ const colorTokens = {
   },
 };
 
-export const darkTheme = createTheme({
+export const themeSwitch = (mode) => ({
   palette: {
-    primary: {
-      ...colorTokens.primary,
-      main: colorTokens.primary[400],
-      light: colorTokens.primary[400],
-    },
-    secondary: {
-      ...colorTokens.secondary,
-      main: colorTokens.secondary[300],
-    },
-    neutral: {
-      ...colorTokens.grey,
-      main: colorTokens.grey[500],
-    },
-    background: {
-      default: colorTokens.primary[600],
-      alt: colorTokens.primary[500],
-    },
+    mode,
+    ...(mode === "dark"
+      ? {
+          primary: {
+            ...colorTokens.primary,
+            main: colorTokens.primary[400],
+            light: colorTokens.primary[400],
+          },
+          secondary: {
+            ...colorTokens.secondary,
+            main: colorTokens.secondary[300],
+          },
+          neutral: {
+            ...colorTokens.grey,
+            main: colorTokens.grey[500],
+          },
+          background: {
+            default: colorTokens.primary[600],
+            alt: colorTokens.primary[500],
+          },
+        }
+      : {
+          primary: {
+            ...colorTokens.primary,
+            main: colorTokens.primary[50],
+            light: colorTokens.primary[100],
+          },
+          secondary: {
+            ...colorTokens.secondary,
+            main: colorTokens.secondary[600],
+            light: colorTokens.secondary[700],
+          },
+          neutral: {
+            ...colorTokens.grey,
+            main: colorTokens.grey[500],
+          },
+          background: {
+            default: colorTokens.grey[0],
+            alt: colorTokens.grey[50],
+          },
+        }),
   },
-
   typography: {
     fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-    fontSize: 12,
+    fontSize: 16,
     h1: {
       fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
       fontSize: 40,
@@ -82,66 +103,6 @@ export const darkTheme = createTheme({
     h4: {
       fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
       fontSize: 20,
-    },
-    h5: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 16,
-    },
-    h6: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 14,
-    },
-  },
-});
-
-export const lightTheme = createTheme({
-  palette: {
-    primary: {
-      ...colorTokens.primary,
-      main: colorTokens.primary[50],
-      light: colorTokens.primary[100],
-    },
-    secondary: {
-      ...colorTokens.secondary,
-      main: colorTokens.secondary[600],
-      light: colorTokens.secondary[700],
-    },
-    neutral: {
-      ...colorTokens.grey,
-      main: colorTokens.grey[500],
-    },
-    background: {
-      default: colorTokens.grey[0],
-      alt: colorTokens.grey[50],
-    },
-  },
-
-  typography: {
-    fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-    fontSize: 12,
-    h1: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 40,
-    },
-    h2: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 32,
-    },
-    h3: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 24,
-    },
-    h4: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 20,
-    },
-    h5: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 16,
-    },
-    h6: {
-      fontFamily: ["Ubuntu Sans", "sans-serif"].join(","),
-      fontSize: 14,
     },
   },
 });
