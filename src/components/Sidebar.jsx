@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Box,
   Divider,
@@ -16,7 +17,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FlexBox } from "./FlexBox.js";
 import profileImage from "../assets/profile.png";
-import { navLinks } from "./navLinks.jsx";
+import { navLinks } from "../../utils/navLinks.jsx";
 import { ChevronLeft, ChevronRightOutlined } from "@mui/icons-material";
 
 function Sidebar({ drawerWidth, isSidebarOpen, setIsSidebarOpen, isMobile }) {
