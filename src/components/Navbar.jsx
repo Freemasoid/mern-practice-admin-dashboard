@@ -9,7 +9,7 @@ import {
 import { useDispatch } from "react-redux";
 import { AppBar, Toolbar, useTheme, IconButton, InputBase } from "@mui/material";
 import { FlexBox } from "./FlexBox.js";
-import { setMode } from "../features/theme/themeSlice.js";
+import { setMode } from "../features/state/stateSlice.js";
 
 function Navbar() {
   const dispatch = useDispatch();

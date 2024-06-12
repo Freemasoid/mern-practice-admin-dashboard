@@ -7,7 +7,7 @@ import { createTheme } from "@mui/material/styles";
 import { themeSwitch } from "./muiThemes.js";
 
 function App() {
-  const mode = useSelector((store) => store.theme.mode);
+  const mode = useSelector((store) => store.state.mode);
   const theme = useMemo(() => createTheme(themeSwitch(mode)), [mode]);
 
   return (
